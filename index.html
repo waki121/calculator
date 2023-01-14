@@ -345,7 +345,11 @@
             id="display"
             style="font-size: 4em; text-align: right"
           >
-            <b id="calc_display">0</b>
+            <b
+              id="calc_display"
+              onchange="Cookies.set('old_calc_display',document.getElementById('calc_display').innerHTML)"
+              >0</b
+            >
           </td>
         </tr>
         <tr>
@@ -630,14 +634,8 @@
       btn.addEventListener("click", () => {
         nav.classList.toggle("open-menu");
       });
-      document.getElementById("calc_display").addEventListener("change", () => {
-        Cookies.set(
-          "old_calc_display",
-          document.getElementById("calc_display").innerHTML
-        );
-      });
+
       function click_calc_bt(bt_name) {
-        console.log(bt_name);
         if (bt_name === "del") {
           document.getElementById("calc_display").innerHTML = "0";
         }
