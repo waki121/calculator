@@ -332,8 +332,8 @@
     </h1>
     <nav>
       <ul>
-        <li><a href="/">電卓</a></li>
-        <li><a href="./help">使い方</a></li>
+        <li><a href="https://waki121.github.io/calculator/">電卓</a></li>
+        <li><a onclick="delete_hist()">履歴の削除</a></li>
       </ul>
     </nav>
     <table align="center">
@@ -558,6 +558,9 @@
         target = document.getElementById("calc_display");
         target.innerHTML = Cookies.get("old_calc_display") ?? "0";
       };
+      function delete_hist() {
+        Cookies.remove("history");
+      }
       window.addEventListener("DOMContentLoaded", () => {
         if (matchMedia("(prefers-color-scheme: dark)").matches) {
           document
@@ -614,8 +617,10 @@
             .getElementById("calc_display")
             .innerHTML.replaceAll("×", "*")
             .replaceAll("÷", "/");
+
           try {
-            document.getElementById("calc_display").innerHTML = eval(siki);
+            const a = eval(siki);
+            document.getElementById("calc_display").innerHTML = a;
           } catch (e) {
             console.log("エラーが発生しました。\n" + e);
           }
@@ -628,7 +633,7 @@
       document.getElementById("calc_display").addEventListener("change", () => {
         Cookies.set(
           "old_calc_display",
-          document.getElementById("calc_display")
+          document.getElementById("calc_display").innerHTML
         );
       });
       function click_calc_bt(bt_name) {
