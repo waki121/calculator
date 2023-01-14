@@ -345,11 +345,7 @@
             id="display"
             style="font-size: 4em; text-align: right"
           >
-            <b
-              id="calc_display"
-              onchange="Cookies.set('old_calc_display',document.getElementById('calc_display').innerHTML)"
-              >0</b
-            >
+            <b id="calc_display" onchange="">0</b>
           </td>
         </tr>
         <tr>
@@ -716,6 +712,12 @@
           }
         }
       }
+      setInterval(() => {
+        Cookies.set(
+          "old_calc_display",
+          document.getElementById("calc_display").innerHTML
+        );
+      }, 1000);
     </script>
   </body>
 </html>
