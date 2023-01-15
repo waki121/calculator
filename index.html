@@ -330,6 +330,38 @@
         />
       </svg>
     </h1>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      style="color: rgb(0, 0, 0)"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">履歴</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="hewajdfaeoidjcspaiodf"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <nav>
       <ul>
         <li><a href="https://waki121.github.io/calculator/">電卓</a></li>
@@ -363,6 +395,9 @@
               type="button"
               class="btn btn-warning"
               onclick="click_calc_bt('rireki')"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              id="gkldfstert4"
             >
               <i class="fa-solid fa-clock-rotate-left fa-4x"></i>
             </button>
@@ -558,8 +593,9 @@
         target = document.getElementById("calc_display");
         target.innerHTML = Cookies.get("old_calc_display") ?? "0";
       };
+      const ddtt = [];
       function delete_hist() {
-        Cookies.remove("history");
+        ddtt.length = 0;
       }
       window.addEventListener("DOMContentLoaded", () => {
         if (matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -712,12 +748,28 @@
           }
         }
       }
+      document.getElementById("gkldfstert4").addEventListener("click", () => {
+        let pp = document.getElementById("hewajdfaeoidjcspaiodf");
+        ddtt.forEach(function (dtdata, index) {
+          let p = document.createElement("p");
+          p.innerHTML = `${index + 1}: ${dtdata}`;
+          pp.appendChild(p);
+        });
+      });
       setInterval(() => {
+        if (
+          ddtt[ddtt.length - 1] ===
+          document.getElementById("calc_display").innerHTML
+        ) {
+          return;
+        } else {
+          ddtt.push(document.getElementById("calc_display").innerHTML);
+        }
         Cookies.set(
           "old_calc_display",
           document.getElementById("calc_display").innerHTML
         );
-      }, 1000);
+      }, 1);
     </script>
   </body>
 </html>
