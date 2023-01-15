@@ -776,12 +776,14 @@
           return;
         } else {
           ddtt.push(document.getElementById("calc_display").innerHTML);
-          Cookies.set(
+          
+          if (document.getElementById("calc_display").innerHTML !== "-") {
+            Cookies.set(
           "old_calc_display",
           document.getElementById("calc_display").innerHTML
         );
+          }
         }
-        
       }, 1);
     </script>
   </body>
