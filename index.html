@@ -316,7 +316,11 @@
       }
     </script>
   </head>
-  <body oncontextmenu="return false;" style="user-select: none">
+  <body
+    oncontextmenu="return false;"
+    style="user-select: none"
+    onload="onLoad();"
+  >
     <h1 style="font-size: 4em; text-align: center">
       電卓<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -598,10 +602,10 @@
       </tbody>
     </table>
     <script>
-      window.onload = function onLoad() {
+      function onLoad() {
         target = document.getElementById("calc_display");
         target.innerHTML = Cookies.get("old_calc_display") ?? "0";
-      };
+      }
       const ddtt = [];
       function delete_hist() {
         ddtt.length = 0;
@@ -774,12 +778,10 @@
         } else {
           ddtt.push(document.getElementById("calc_display").innerHTML);
 
-          if (document.getElementById("calc_display").innerHTML !== "0") {
-            Cookies.set(
-              "old_calc_display",
-              document.getElementById("calc_display").innerHTML
-            );
-          }
+          Cookies.set(
+            "old_calc_display",
+            document.getElementById("calc_display").innerHTML
+          );
         }
       }, 1);
     </script>
