@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <title>QR - 電卓</title>
+    <!-- ここからアイコン等 -->
+    <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="./etc/site-tile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="./etc/site-tile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="./etc/site-tile-310x310.png" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./etc/favicon.ico" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./etc/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./etc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./etc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./etc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./etc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./etc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./etc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./etc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./etc/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./etc/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="36x36" href="./etc/android-chrome-36x36.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="./etc/android-chrome-48x48.png" />
+    <link rel="icon" type="image/png" sizes="72x72" href="./etc/android-chrome-72x72.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./etc/android-chrome-96x96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="./etc/android-chrome-128x128.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="./etc/android-chrome-144x144.png" />
+    <link rel="icon" type="image/png" sizes="152x152" href="./etc/android-chrome-152x152.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./etc/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="./etc/android-chrome-256x256.png" />
+    <link rel="icon" type="image/png" sizes="384x384" href="./etc/android-chrome-384x384.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./etc/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="36x36" href="./etc/icon-36x36.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="./etc/icon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="72x72" href="./etc/icon-72x72.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./etc/icon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="./etc/icon-128x128.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="./etc/icon-144x144.png" />
+    <link rel="icon" type="image/png" sizes="152x152" href="./etc/icon-152x152.png" />
+    <link rel="icon" type="image/png" sizes="160x160" href="./etc/icon-160x160.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./etc/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="196x196" href="./etc/icon-196x196.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="./etc/icon-256x256.png" />
+    <link rel="icon" type="image/png" sizes="384x384" href="./etc/icon-384x384.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./etc/icon-512x512.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./etc/icon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="24x24" href="./etc/icon-24x24.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./etc/icon-32x32.png" />
+    <!-- ここまでアイコン等 -->
+    <link rel="manifest" href="./etc/manifest.json" />
+    <!-- bootstrapを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                    "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+                color: #fff;
+                background-color: rgb(34, 34, 34);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                color: #333;
+                background-color: #fff;
+                font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                    "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+            }
+        }
+
+        /* 基本装飾 */
+        #black01 {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #notblack {
+            background-color: white;
+            color: black;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            height: 100px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        li {
+            margin: 2rem 0;
+            list-style: none;
+            text-align: center;
+            color: black;
+        }
+
+        #btn-menu {
+            border: 1px solid #999;
+            background: transparent;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        nav {
+            display: flex;
+            background: #0bd;
+            position: absolute;
+            z-index: 1;
+            top: 3.125rem;
+            right: 0;
+            overflow-x: hidden;
+            text-align: center;
+            width: 0;
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        nav.open-menu {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-size: 4em">
+        電卓 v0.1.2<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+            class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path
+                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="https://waki121.github.io/calculator/">電卓</a></li>
+            <li>
+                <a href="https://waki121.github.io/calculator/changelog">変更ログ</a>
+            </li>
+            <li>
+                <a href="https://waki121.github.io/calculator/qr">QRコード</a>
+            </li>
+            <li>
+                <a href="https://github.com/waki121/calculator"><i class="fa-brands fa-github"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        const btn = document.getElementsByTagName("svg")[0];
+        const nav = document.querySelector("nav");
+        btn.addEventListener("click", () => {
+            nav.classList.toggle("open-menu");
+        });
+    </script>
+    <h1>QRコード</h1>
+    <img src="./QR.png" width="540" height="540" />
+</body>
+
+</html>
