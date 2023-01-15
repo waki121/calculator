@@ -602,6 +602,7 @@
     </table>
     <script>
       window.onload = function onLoad() {
+        alert(navigator.userAgent)
         target = document.getElementById("calc_display");
         target.innerHTML = Cookies.get("old_calc_display") ?? "0";
       };
