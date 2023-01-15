@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <title>Home - 電卓</title>
     <!-- ここからアイコン等 -->
     <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png" />
@@ -251,6 +251,23 @@
       crossorigin="anonymous"
     ></script>
     <style>
+      @media (prefers-color-scheme: dark) {
+        body {
+          font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+            "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+          color: #fff;
+          background-color: rgb(34, 34, 34);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          color: #333;
+          background-color: #fff;
+          font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+            "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+        }
+      }
       /* 基本装飾 */
       #black01 {
         background-color: #333;
