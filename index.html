@@ -602,7 +602,6 @@
     </table>
     <script>
       window.onload = function onLoad() {
-        alert(navigator.userAgent)
         target = document.getElementById("calc_display");
         target.innerHTML = Cookies.get("old_calc_display") ?? "0";
       };
@@ -777,11 +776,12 @@
           return;
         } else {
           ddtt.push(document.getElementById("calc_display").innerHTML);
-        }
-        Cookies.set(
+          Cookies.set(
           "old_calc_display",
           document.getElementById("calc_display").innerHTML
         );
+        }
+        
       }, 1);
     </script>
   </body>
