@@ -295,7 +295,7 @@
   <script>
     window.onload = function onLoad() {
       target = document.getElementById("calc_display");
-      target.innerHTML = Cookies.get("old_calc_display") ?? "0";
+      target.innerHTML = Cookies.get("old_calc_display") ?? " 0";
     };
     const ddtt = [];
     function delete_hist() {
@@ -407,7 +407,7 @@
             Number(document.getElementById("calc_display").innerHTML) / 100;
         }
       }
-      if (document.getElementById("calc_display").innerHTML === "0") {
+      if (document.getElementById("calc_display").innerHTML === " 0") {
         if (
           bt_name === "tasu" ||
           bt_name === "hiku" ||
@@ -469,7 +469,7 @@
       } else {
         ddtt.push(document.getElementById("calc_display").innerHTML);
 
-        if (document.getElementById("calc_display").innerHTML !== "0") {
+        if (document.getElementById("calc_display").innerHTML !== " 0") {
           Cookies.set(
             "old_calc_display",
             document.getElementById("calc_display").innerHTML
