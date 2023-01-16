@@ -18,6 +18,9 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementsByTagName("body")[0].setAttribute("id", "black01");
     document
       .getElementsByTagName("tbody")[0]
+      .setAttribute("style", "background-color: #002c5e;");
+    document
+      .getElementsByTagName("tbody")[1]
       .setAttribute("style", "background-color: #002c5e");
     document
       .getElementsByTagName("svg")[0]
@@ -26,6 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementsByTagName("body")[0].setAttribute("id", "notblack");
     document
       .getElementsByTagName("tbody")[0]
+      .setAttribute("style", "background-color: #78b7ff;");
+    document
+      .getElementsByTagName("tbody")[1]
       .setAttribute("style", "background-color: #78b7ff");
     document
       .getElementsByTagName("svg")[0]
