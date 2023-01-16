@@ -1,7 +1,5 @@
 # calculator
-**IEのサポートを終了しました。**
-
-**iOS 12では動作しません。**
+**iOS 12以前とInternet Explorerでは動作しません。<br>Internet Explorerを使っている場合は自動的にEdgeにリダイレクトされます**
 
 
 ## link 
