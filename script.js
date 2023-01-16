@@ -3,9 +3,16 @@ function onLoad() {
   target.innerHTML = Cookies.get("old_calc_display") ?? "0";
 }
 let ddtt = [];
-function delete_hist() {
-  ddtt = [];
-}
+document
+  .getElementById("delete_mdelete_modal_dataodal_data")
+  .addEventListener("click", () => {
+    ddtt = [];
+    let pp = document.getElementById("hewajdfaeoidjcspaiodf");
+    while (pp.firstChild) {
+      pp.removeChild(pp.firstChild);
+    }
+    alert("履歴を削除しました。");
+  });
 window.addEventListener("DOMContentLoaded", () => {
   if (matchMedia("(prefers-color-scheme: dark)").matches) {
     document.getElementsByTagName("body")[0].setAttribute("id", "black01");
