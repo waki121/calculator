@@ -110,7 +110,12 @@ function keypress_ivent(e) {
     });
     siki = siki.join(" ");
     try {
-      document.getElementById("calc_display").innerHTML = String(eval(siki));
+      const moto = String(eval(siki));
+      if (moto === "undefined") {
+        return;
+      } else {
+        document.getElementById("calc_display").innerHTML = mono;
+      }
     } catch (e) {
       console.log("エラーが発生しました。\n" + e);
     }
@@ -183,7 +188,12 @@ function click_calc_bt(bt_name) {
     });
     siki = siki.join(" ");
     try {
-      document.getElementById("calc_display").innerHTML = String(eval(siki));
+      const moto = String(eval(siki));
+      if (moto === "undefined") {
+        return;
+      } else {
+        document.getElementById("calc_display").innerHTML = mono;
+      }
     } catch (e) {
       console.log("エラーが発生しました。\n" + e);
     }
