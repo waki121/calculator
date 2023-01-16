@@ -238,7 +238,7 @@
       href="./etc/icon-32x32.png"
     />
     <!-- ここまでアイコン等 -->
-    <!-- <link rel="manifest" href="./etc/manifest.json" /> -->
+    <link rel="manifest" href="manifest.json" />
     <!-- bootstrapを読み込む -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -359,8 +359,16 @@
           <div class="modal-footer">
             <button
               type="button"
+              class="btn btn-danger"
+              id="delete_mdelete_modal_dataodal_data"
+            >
+              履歴を削除
+            </button>
+            <button
+              type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
+              id="close_modal"
             >
               閉じる
             </button>
@@ -382,24 +390,24 @@
       </ul>
     </nav>
     <table align="center">
-      <tbody style="background-color: #78b7ff">
+      <tbody style="background-color: #78b7ff; width: 408px">
         <tr>
           <td
             colspan="4"
             class="display"
             id="display"
-            style="font-size: 4em; text-align: right"
+            style="font-size: 4em; text-align: right; width: 360px"
           >
             <b id="calc_display" onchange="">0</b>
           </td>
         </tr>
+      </tbody>
+    </table>
+    <table align="center">
+      <tbody style="background-color: #78b7ff">
         <tr>
           <th>
-            <button
-              type="button"
-              class="btn btn-danger"
-              onclick="click_calc_bt('del')"
-            >
+            <button type="button" class="btn btn-danger" id="del">
               <i class="fa-solid fa-trash-can fa-4x"></i>
             </button>
           </th>
@@ -407,29 +415,20 @@
             <button
               type="button"
               class="btn btn-warning"
-              onclick="click_calc_bt('rireki')"
+              id="rireki"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              id="gkldfstert4"
             >
               <i class="fa-solid fa-clock-rotate-left fa-4x"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="click_calc_bt('percent')"
-            >
+            <button type="button" class="btn btn-warning" id="percent">
               <i class="fa-solid fa-percent fa-4x"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-danger"
-              onclick="click_calc_bt('hitotukesu')"
-            >
+            <button type="button" class="btn btn-danger" id="hitotukesu">
               <i class="fa-solid fa-delete-left fa-4x"></i>
             </button>
           </td>
@@ -439,7 +438,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(1)"
+              id="1"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-1"></i>
@@ -449,7 +448,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(2)"
+              id="2"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-2"></i>
@@ -459,18 +458,14 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(3)"
+              id="3"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-3"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="click_calc_bt('waru')"
-            >
+            <button type="button" class="btn btn-warning" id="waru">
               <i class="fas fa-divide fa-4x"></i>
             </button>
           </td>
@@ -480,7 +475,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(4)"
+              id="4"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-4"></i>
@@ -490,7 +485,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(5)"
+              id="5"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-5"></i>
@@ -500,18 +495,14 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(6)"
+              id="6"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-6"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="click_calc_bt('kk')"
-            >
+            <button type="button" class="btn btn-warning" id="kk">
               <i class="fa-solid fa-xmark fa-4x"></i>
             </button>
           </td>
@@ -522,7 +513,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(7)"
+              id="7"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-7"></i>
@@ -532,7 +523,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(8)"
+              id="8"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-8"></i>
@@ -542,18 +533,14 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(9)"
+              id="9"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-9"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="click_calc_bt('hiku')"
-            >
+            <button type="button" class="btn btn-warning" id="hiku">
               <i class="fa-solid fa-minus fa-4x"></i>
             </button>
           </td>
@@ -563,7 +550,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt(0)"
+              id="0"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-0"></i>
@@ -573,7 +560,7 @@
             <button
               type="button"
               class="btn btn-success"
-              onclick="click_calc_bt('dot')"
+              id="dot"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-circle" style="font-size: large"></i>
@@ -583,207 +570,21 @@
             <button
               type="button"
               class="btn btn-warning"
-              onclick="click_calc_bt('ikoru')"
+              id="ikoru"
               style="font-size: 4em"
             >
               <i class="fa-solid fa-equals"></i>
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="click_calc_bt('tasu')"
-            >
+            <button type="button" class="btn btn-warning" id="tasu">
               <i class="fa-solid fa-plus fa-4x"></i>
             </button>
           </td>
         </tr>
       </tbody>
     </table>
-    <script>
-      function onLoad() {
-        target = document.getElementById("calc_display");
-        target.innerHTML = Cookies.get("old_calc_display") ?? "0";
-      }
-      const ddtt = [];
-      function delete_hist() {
-        ddtt.length = 0;
-      }
-      window.addEventListener("DOMContentLoaded", () => {
-        if (matchMedia("(prefers-color-scheme: dark)").matches) {
-          document
-            .getElementsByTagName("body")[0]
-            .setAttribute("id", "black01");
-          document
-            .getElementsByTagName("tbody")[0]
-            .setAttribute("style", "background-color: #002c5e");
-          document
-            .getElementsByTagName("svg")[0]
-            .setAttribute("style", "color: rgb(221, 221, 221)");
-        } else {
-          document
-            .getElementsByTagName("body")[0]
-            .setAttribute("id", "notblack");
-          document
-            .getElementsByTagName("tbody")[0]
-            .setAttribute("style", "background-color: #78b7ff");
-          document
-            .getElementsByTagName("svg")[0]
-            .setAttribute("style", "color: rgb(89, 89, 89)");
-        }
-      });
-      const btn = document.getElementsByTagName("svg")[0];
-      const nav = document.querySelector("nav");
-      document.addEventListener("keypress", keypress_ivent);
-      function keypress_ivent(e) {
-        if (
-          e.key === "1" ||
-          e.key === "2" ||
-          e.key === "3" ||
-          e.key === "4" ||
-          e.key === "5" ||
-          e.key === "6" ||
-          e.key === "7" ||
-          e.key === "8" ||
-          e.key === "9" ||
-          e.key === "0" ||
-          e.key === "." ||
-          e.key === "*" ||
-          e.key === "+" ||
-          e.key === "-" ||
-          e.key === "/"
-        ) {
-          if (document.getElementById("calc_display").innerHTML === "0")
-            return (document.getElementById("calc_display").innerHTML = e.key
-              .replaceAll("*", "×")
-              .replaceAll("/", "÷"));
-          document.getElementById("calc_display").innerHTML =
-            document.getElementById("calc_display").innerHTML +
-            e.key.replaceAll("*", "×").replaceAll("/", "÷");
-        } else if (e.key === "Enter") {
-          let siki = document
-            .getElementById("calc_display")
-            .innerHTML.replaceAll("×", "*")
-            .replaceAll("÷", "/");
-
-          try {
-            const a = eval(siki);
-            document.getElementById("calc_display").innerHTML = a;
-          } catch (e) {
-            console.log("エラーが発生しました。\n" + e);
-          }
-        }
-        return false;
-      }
-      btn.addEventListener("click", () => {
-        nav.classList.toggle("open-menu");
-      });
-
-      function click_calc_bt(bt_name) {
-        if (bt_name === "del") {
-          document.getElementById("calc_display").innerHTML = "0";
-        }
-        if (bt_name === "hitotukesu") {
-          if (document.getElementById("calc_display").innerHTML.length === 1) {
-            document.getElementById("calc_display").innerHTML = "0";
-          } else {
-            document.getElementById("calc_display").innerHTML = document
-              .getElementById("calc_display")
-              .innerHTML.slice(0, -1);
-          }
-        }
-        if (bt_name === "ikoru") {
-          let siki = document
-            .getElementById("calc_display")
-            .innerHTML.replaceAll("×", "*")
-            .replaceAll("÷", "/");
-          try {
-            document.getElementById("calc_display").innerHTML = eval(siki);
-          } catch (e) {
-            console.log("エラーが発生しました。\n" + e);
-          }
-        }
-        if (bt_name === "percent") {
-          if (
-            isNaN(
-              Number(document.getElementById("calc_display").innerHTML) / 100
-            )
-          ) {
-            return;
-          } else {
-            document.getElementById("calc_display").innerHTML =
-              Number(document.getElementById("calc_display").innerHTML) / 100;
-          }
-        }
-        if (document.getElementById("calc_display").innerHTML === "0") {
-          if (
-            bt_name === "tasu" ||
-            bt_name === "hiku" ||
-            bt_name === "kk" ||
-            bt_name === "waru" ||
-            bt_name === "del" ||
-            bt_name === "rireki" ||
-            bt_name === "percent" ||
-            bt_name === "dot" ||
-            bt_name === "ikoru" ||
-            bt_name === "hitotukesu"
-          )
-            return;
-          document.getElementById("calc_display").innerHTML = bt_name;
-        } else {
-          if (
-            bt_name === "del" ||
-            bt_name === "rireki" ||
-            bt_name === "percent" ||
-            bt_name === "ikoru" ||
-            bt_name === "hitotukesu"
-          )
-            return;
-          if (bt_name === "kk") {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + "×";
-          } else if (bt_name === "tasu") {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + "+";
-          } else if (bt_name === "hiku") {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + "-";
-          } else if (bt_name === "waru") {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + "÷";
-          } else if (bt_name === "dot") {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + ".";
-          } else {
-            document.getElementById("calc_display").innerHTML =
-              document.getElementById("calc_display").innerHTML + bt_name;
-          }
-        }
-      }
-      document.getElementById("gkldfstert4").addEventListener("click", () => {
-        let pp = document.getElementById("hewajdfaeoidjcspaiodf");
-        ddtt.forEach(function (dtdata, index) {
-          let p = document.createElement("p");
-          p.innerHTML = `${index + 1}: ${dtdata}`;
-          pp.appendChild(p);
-        });
-      });
-      setInterval(() => {
-        if (
-          ddtt[ddtt.length - 1] ===
-          document.getElementById("calc_display").innerHTML
-        ) {
-          return;
-        } else {
-          ddtt.push(document.getElementById("calc_display").innerHTML);
-
-          Cookies.set(
-            "old_calc_display",
-            document.getElementById("calc_display").innerHTML
-          );
-        }
-      }, 1);
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
