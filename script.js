@@ -46,12 +46,7 @@ function keypress_ivent(e) {
     e.key === "7" ||
     e.key === "8" ||
     e.key === "9" ||
-    e.key === "0" ||
-    e.key === "." ||
-    e.key === "*" ||
-    e.key === "+" ||
-    e.key === "-" ||
-    e.key === "/"
+    e.key === "0"
   ) {
     if (document.getElementById("calc_display").innerHTML === "0")
       return (document.getElementById("calc_display").innerHTML = e.key
@@ -114,10 +109,57 @@ function keypress_ivent(e) {
       if (moto === "undefined") {
         return;
       } else {
-        document.getElementById("calc_display").innerHTML = mono;
+        document.getElementById("calc_display").innerHTML = moto;
       }
     } catch (e) {
       console.log("エラーが発生しました。\n" + e);
+    }
+  } else if (e.key === ".") {
+    if (
+      document.getElementById("calc_display").innerHTML.split(".").length === 1
+    ) {
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + ".";
+    }
+  } else if (e.key === "+") {
+    if (
+      !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("+")
+    ) {
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + "+";
+    }
+  } else if (e.key === "-") {
+    if (
+      !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("+")
+    ) {
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + "-";
+    }
+  } else if (e.key === "*") {
+    if (
+      !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("+")
+    ) {
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + "×";
+    }
+  } else if (e.key === "/") {
+    if (
+      !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+      !document.getElementById("calc_display").innerHTML.endsWith("+")
+    ) {
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + "÷";
     }
   }
   return false;
@@ -192,7 +234,7 @@ function click_calc_bt(bt_name) {
       if (moto === "undefined") {
         return;
       } else {
-        document.getElementById("calc_display").innerHTML = mono;
+        document.getElementById("calc_display").innerHTML = moto;
       }
     } catch (e) {
       console.log("エラーが発生しました。\n" + e);
@@ -234,20 +276,53 @@ function click_calc_bt(bt_name) {
     )
       return;
     if (bt_name === "kk") {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + "×";
+      if (
+        !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("+")
+      ) {
+        document.getElementById("calc_display").innerHTML =
+          document.getElementById("calc_display").innerHTML + "×";
+      }
     } else if (bt_name === "tasu") {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + "+";
+      if (
+        !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("+")
+      ) {
+        document.getElementById("calc_display").innerHTML =
+          document.getElementById("calc_display").innerHTML + "+";
+      }
     } else if (bt_name === "hiku") {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + "-";
+      if (
+        !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("+")
+      ) {
+        document.getElementById("calc_display").innerHTML =
+          document.getElementById("calc_display").innerHTML + "-";
+      }
     } else if (bt_name === "waru") {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + "÷";
+      if (
+        !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("*") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("-") &&
+        !document.getElementById("calc_display").innerHTML.endsWith("+")
+      ) {
+        document.getElementById("calc_display").innerHTML =
+          document.getElementById("calc_display").innerHTML + "÷";
+      }
     } else if (bt_name === "dot") {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + ".";
+      if (
+        document.getElementById("calc_display").innerHTML.split(".").length ===
+        1
+      ) {
+        document.getElementById("calc_display").innerHTML =
+          document.getElementById("calc_display").innerHTML + ".";
+      }
     } else {
       document.getElementById("calc_display").innerHTML =
         document.getElementById("calc_display").innerHTML + bt_name;
