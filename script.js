@@ -115,12 +115,8 @@ function keypress_ivent(e) {
       console.log("エラーが発生しました。\n" + e);
     }
   } else if (e.key === ".") {
-    if (
-      document.getElementById("calc_display").innerHTML.split(".").length === 1
-    ) {
-      document.getElementById("calc_display").innerHTML =
-        document.getElementById("calc_display").innerHTML + ".";
-    }
+    document.getElementById("calc_display").innerHTML =
+      document.getElementById("calc_display").innerHTML + ".";
   } else if (e.key === "+") {
     if (
       !document.getElementById("calc_display").innerHTML.endsWith("÷") &&
@@ -316,13 +312,8 @@ function click_calc_bt(bt_name) {
           document.getElementById("calc_display").innerHTML + "÷";
       }
     } else if (bt_name === "dot") {
-      if (
-        document.getElementById("calc_display").innerHTML.split(".").length ===
-        1
-      ) {
-        document.getElementById("calc_display").innerHTML =
-          document.getElementById("calc_display").innerHTML + ".";
-      }
+      document.getElementById("calc_display").innerHTML =
+        document.getElementById("calc_display").innerHTML + ".";
     } else {
       document.getElementById("calc_display").innerHTML =
         document.getElementById("calc_display").innerHTML + bt_name;
