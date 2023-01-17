@@ -1,4 +1,5 @@
 # calculator
+**開発中断**<br>
 **iOS 12以前とInternet Explorerでは動作しません。<br>Internet Explorerを使っている場合は自動的にEdgeにリダイレクトされます**
 
 
